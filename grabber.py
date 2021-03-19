@@ -5,6 +5,19 @@ import feedparser
 
 
 class Grabber:
+    """ 
+    - get_news(channel -> int, limit -> int)
+        channel:
+            0 - Lenta
+            1 - Interfax
+            2 - Kommersant
+            3 - m24
+        limit - количество новостей, которые попадут в выборку
+
+    - get_all_news(limit -> int)
+        Получает новости со всех каналов
+        limit - количество новостей, которые попадут в выборку
+    """
     def __init__(self):
         self.urls = [
             os.environ.get('LENTA_URL'),
@@ -44,5 +57,5 @@ if __name__ == '__main__':
     limit = 3
     channel = 3
     grabber = Grabber()
-    #print(grabber.get_news(channel, limit))
+    print(grabber.get_news(channel, limit))
     print(grabber.get_all_news(limit))
