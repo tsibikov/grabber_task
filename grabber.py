@@ -57,5 +57,5 @@ if __name__ == '__main__':
     limit = 3
     channel = 3
     grabber = Grabber()
-    print(grabber.get_news(channel, limit))
+    #print(grabber.get_news(channel, limit))
     print(grabber.get_all_news(limit))
