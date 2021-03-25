@@ -10,7 +10,7 @@ from database import session, News
 app = FastAPI()
 
 
-#@app.get('/get-news')
+@app.get('/get-news')
 def get_response():
     get_all_news()
     news_query = session.query(News).order_by(News.id.desc()).limit(12)
