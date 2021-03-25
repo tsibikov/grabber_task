@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI
 import os
 from sqlalchemy.orm import Session
 from dotenv import load_dotenv
@@ -65,6 +65,3 @@ def get_news(channel: int):
         else:   
             session.close() 
             return 
-
-get_all_news()
-print(get_response())
