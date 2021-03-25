@@ -5,12 +5,9 @@ from sqlalchemy import Integer, String
 from sqlalchemy.sql.schema import Column
 
 
-
-engine = create_engine('postgresql://postgres:postgres@localhost/news_db')
+engine = create_engine('postgresql://postgres:postgres@db/news_db')
 Session = sessionmaker(bind=engine)
 session = Session()
-
-Base = declarative_base()
 
 
 class News(Base):   
@@ -21,7 +18,3 @@ class News(Base):
     text = Column(String)
     pub_date = Column(String)
     image = Column(String)
-    
-
-
-Base.metadata.create_all(engine)

@@ -5,9 +5,13 @@ from dotenv import load_dotenv
 load_dotenv()
 import feedparser
 from schemas import AllNews_schema, News_schema
-from database import session, News
+from database import session, News, engine
+from sqlalchemy.ext.declarative import declarative_base
+
 
 app = FastAPI()
+Base = declarative_base()
+Base.metadata.create_all(engine)
 
 
 @app.get('/get-news')
