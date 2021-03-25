@@ -1,0 +1,7 @@
+feedparser==6.0.2
+python-dotenv==0.15.0
+uvicorn==0.13.4
+fastapi==0.63.0
+pydantic==1.8.1
+sqlalchemy==1.4.2
+psycopg2-binary==2.8.6

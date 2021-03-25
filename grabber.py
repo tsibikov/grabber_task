@@ -4,6 +4,7 @@ load_dotenv()
 import feedparser
 
 
+
 class Grabber:
     """ 
     - get_news(channel -> int, limit -> int)
@@ -48,7 +49,7 @@ class Grabber:
     def get_all_news(self, limit):
         all_news = []
         for channel in range(0,4):
-            all_news.append(self.get_news(channel, limit))
+            all_news += self.get_news(channel, limit)
         return all_news
 
 
@@ -57,5 +58,5 @@ if __name__ == '__main__':
     limit = 3
     channel = 3
     grabber = Grabber()
-    #print(grabber.get_news(channel, limit))
+    print(grabber.get_news(channel, limit))
     print(grabber.get_all_news(limit))
